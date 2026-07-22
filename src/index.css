@@ -26,8 +26,8 @@ body {
 
 @media print {
   body {
-    background: white !important;
-    color: black !important;
+    background: #0A0A0A !important;
+    color: #E0E0E0 !important;
   }
   .print\:hidden {
     display: none !important;

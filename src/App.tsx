@@ -235,12 +235,12 @@ export default function App() {
       </div>
 
       {/* Print View */}
-      <div className="hidden print:block w-full max-w-4xl mx-auto py-12 px-8 font-sans text-black bg-white">
+      <div className="hidden print:block w-full max-w-4xl mx-auto py-12 px-8 font-sans text-[#E0E0E0] bg-[#0A0A0A]">
         <div className="mb-24 mt-24 text-center page-break-after">
-          <div className="text-sm uppercase tracking-[0.3em] font-bold mb-8 text-gray-500">
+          <div className="text-sm uppercase tracking-[0.3em] font-bold mb-8 text-[#C5A059]">
             E-book
           </div>
-          <h1 className="font-serif text-6xl leading-tight text-black max-w-2xl mx-auto">
+          <h1 className="font-serif text-6xl leading-tight text-[#E0E0E0] max-w-2xl mx-auto">
             {bookTitle}
           </h1>
         </div>
@@ -248,18 +248,18 @@ export default function App() {
         {chapters.map((chapter, idx) => (
           <div key={idx} className="page-break-after py-12">
             <div className="mb-12">
-              <div className="text-[12px] uppercase tracking-widest font-bold text-gray-500 mb-4 flex items-center gap-4">
-                <span className="font-serif italic text-black text-lg">
+              <div className="text-[12px] uppercase tracking-widest font-bold text-[#C5A059] mb-4 flex items-center gap-4">
+                <span className="font-serif italic text-[#C5A059] text-lg">
                   {(idx + 1).toString().padStart(2, '0')}
                 </span>
                 {idx === 0 ? "Introduction" : "Chapter"}
               </div>
-              <h2 className="font-serif text-4xl leading-[1.1] text-black">
+              <h2 className="font-serif text-4xl leading-[1.1] text-[#E0E0E0]">
                 {getCleanTitle(chapter.title)}
               </h2>
             </div>
             
-            <div className="prose-editorial max-w-none text-black">
+            <div className="prose-editorial max-w-none text-[#E0E0E0]">
               {chapter.content}
             </div>
           </div>

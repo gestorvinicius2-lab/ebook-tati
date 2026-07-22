@@ -9,11 +9,11 @@ import imgPenthouse from '../assets/images/luxury_penthouse_view_1784744409278.j
 const AUTHOR_IMG_URL = 'https://i.postimg.cc/fbZVRCFC/DSC03558-2.jpg';
 
 const P = ({ children }: { children: React.ReactNode }) => (
-  <p className="mb-8 text-lg leading-relaxed text-justify text-[#E0E0E0]/80 print:text-black font-body">{children}</p>
+  <p className="mb-8 text-lg leading-relaxed text-justify text-[#E0E0E0]/80 font-body">{children}</p>
 );
 
 const H3 = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] print:border-black/20 pb-2 inline-block mt-16 mb-8 text-[#C5A059] font-sans">{children}</h3>
+  <h3 className="text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] pb-2 inline-block mt-16 mb-8 text-[#C5A059] font-sans">{children}</h3>
 );
 
 const UL = ({ children }: { children: React.ReactNode }) => (
@@ -23,38 +23,38 @@ const UL = ({ children }: { children: React.ReactNode }) => (
 const LI = ({ children }: { children: React.ReactNode }) => (
   <li className="flex items-baseline gap-6">
     <span className="text-xs font-serif italic text-[#C5A059]">✦</span>
-    <span className="text-lg font-body text-[#E0E0E0]/80 print:text-black leading-relaxed text-justify">{children}</span>
+    <span className="text-lg font-body text-[#E0E0E0]/80 leading-relaxed text-justify">{children}</span>
   </li>
 );
 
 const BQ = ({ children }: { children: React.ReactNode }) => (
-  <blockquote className="my-12 p-8 bg-[#C5A059]/10 border-l-2 border-[#C5A059] italic text-lg font-body text-[#E0E0E0] print:text-black">
+  <blockquote className="my-12 p-8 bg-[#C5A059]/10 border-l-2 border-[#C5A059] italic text-lg font-body text-[#E0E0E0]">
     {children}
   </blockquote>
 );
 
 const AuthorProfile = () => (
-  <div className="w-full flex justify-center bg-[#050505] print:bg-white p-4 md:p-8 mb-16 md:mb-24 rounded-sm border border-[#E0E0E0]/10 shadow-2xl print:shadow-none print:border-black/10">
+  <div className="w-full flex justify-center bg-[#050505] p-4 md:p-8 mb-16 md:mb-24 rounded-sm border border-[#E0E0E0]/10 shadow-2xl">
     <div 
-      className="relative bg-[#0A0A0A] print:bg-gray-100 border border-[#E0E0E0]/10 print:border-black/10 flex flex-col items-center justify-end overflow-hidden shadow-2xl print:shadow-none w-full max-w-[700px]"
+      className="relative bg-[#0A0A0A] border border-[#E0E0E0]/10 flex flex-col items-center justify-end overflow-hidden shadow-2xl w-full max-w-[700px]"
     >
-      <div className="absolute inset-0 z-0 print:hidden">
+      <div className="absolute inset-0 z-0">
         <img src={AUTHOR_IMG_URL} alt="Background" className="w-full h-full object-cover opacity-20 grayscale" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/50 to-transparent"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-16 pt-16 md:pt-32 pb-8 md:pb-16 w-full">
-        <div className="w-64 md:w-96 rounded-sm border-4 md:border-8 border-[#C5A059]/30 p-1 md:p-2 mb-6 md:mb-10 shadow-2xl print:shadow-none bg-[#0A0A0A] print:bg-white">
+        <div className="w-64 md:w-96 rounded-sm border-4 md:border-8 border-[#C5A059]/30 p-1 md:p-2 mb-6 md:mb-10 shadow-2xl bg-[#0A0A0A]">
            <img src={AUTHOR_IMG_URL} alt="Dra. Tatiani Gurgel" className="w-full h-auto object-contain rounded-sm transition-all duration-1000 block" />
         </div>
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#E0E0E0] print:text-black uppercase tracking-[0.1em] leading-none mb-4 md:mb-6">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#E0E0E0] uppercase tracking-[0.1em] leading-none mb-4 md:mb-6">
           Tatiani Gurgel
         </h1>
         <div className="text-[10px] md:text-sm lg:text-lg font-bold text-[#C5A059] uppercase tracking-[0.2em] mb-6 md:mb-10">
           Produtora do E-book
         </div>
         <div className="w-12 md:w-20 h-1 bg-[#C5A059] mb-6 md:mb-10"></div>
-        <div className="text-sm md:text-base lg:text-lg font-body text-[#E0E0E0]/90 print:text-black leading-relaxed text-left space-y-4">
+        <div className="text-sm md:text-base lg:text-lg font-body text-[#E0E0E0]/90 leading-relaxed text-left space-y-4">
           <p>Dra. Tatiani Gurgel é advogada especialista em Direito Imobiliário e gestão de negócios, corretora de imóveis, CEO da Casa Up Negócios Imobiliários e consultora estratégica para investidores no Brasil e no mercado internacional.</p>
           <p>Ao longo de sua trajetória, percebeu que o sucesso no mercado imobiliário vai muito além de vender imóveis: exige conhecimento, método, estratégia, segurança jurídica e posicionamento profissional.</p>
           <p>Este e-book nasceu do desejo de compartilhar experiências e ferramentas práticas que contribuam para a profissionalização do corretor de imóveis, fortalecendo sua atuação, gerando mais credibilidade e elevando o padrão de excelência do mercado. Acredito que conhecimento compartilhado transforma carreiras, gera melhores resultados e beneficia todo o setor imobiliário.</p>
@@ -65,22 +65,22 @@ const AuthorProfile = () => (
 );
 
 const CompareGrid = ({ headers, rows }: { headers: string[], rows: string[][] }) => (
-  <div className="my-16 flex flex-col gap-12 border-y border-[#E0E0E0]/10 py-12 print:border-black/20">
+  <div className="my-16 flex flex-col gap-12 border-y border-[#E0E0E0]/10 py-12">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 hidden md:grid">
-      <h3 className="text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] print:border-black/20 pb-2 inline-block text-[#C5A059] font-sans">{headers[0]}</h3>
-      <h3 className="text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] print:border-black/20 pb-2 inline-block text-[#C5A059] font-sans">{headers[1]}</h3>
+      <h3 className="text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] pb-2 inline-block text-[#C5A059] font-sans">{headers[0]}</h3>
+      <h3 className="text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] pb-2 inline-block text-[#C5A059] font-sans">{headers[1]}</h3>
     </div>
     {rows.map((row, i) => (
       <div key={i} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 relative">
         <div className="space-y-6">
-          <div className="md:hidden text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] print:border-black/20 pb-2 inline-block text-[#C5A059] font-sans mb-2">{headers[0]}</div>
-          <div className="text-lg leading-relaxed text-justify text-[#E0E0E0]/80 print:text-black font-body">{row[0]}</div>
+          <div className="md:hidden text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] pb-2 inline-block text-[#C5A059] font-sans mb-2">{headers[0]}</div>
+          <div className="text-lg leading-relaxed text-justify text-[#E0E0E0]/80 font-body">{row[0]}</div>
         </div>
         <div className="space-y-6 flex flex-col">
-          <div className="md:hidden text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] print:border-black/20 pb-2 inline-block text-[#C5A059] font-sans mb-2 mt-4">{headers[1]}</div>
-          <div className="text-lg leading-relaxed text-justify text-[#E0E0E0]/80 print:text-black font-body">{row[1]}</div>
+          <div className="md:hidden text-[10px] font-bold uppercase tracking-widest border-b border-[#E0E0E0] pb-2 inline-block text-[#C5A059] font-sans mb-2 mt-4">{headers[1]}</div>
+          <div className="text-lg leading-relaxed text-justify text-[#E0E0E0]/80 font-body">{row[1]}</div>
         </div>
-        {i !== rows.length - 1 && <div className="absolute -bottom-6 left-0 right-0 h-px bg-[#E0E0E0]/5 print:bg-black/10 hidden md:block"></div>}
+        {i !== rows.length - 1 && <div className="absolute -bottom-6 left-0 right-0 h-px bg-[#E0E0E0]/5 hidden md:block"></div>}
       </div>
     ))}
   </div>
