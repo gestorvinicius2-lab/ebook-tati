@@ -6,7 +6,7 @@ import imgProfessional from '../assets/images/real_estate_professional_178474437
 import imgContract from '../assets/images/signing_contract_1784744393533.jpg';
 import imgPenthouse from '../assets/images/luxury_penthouse_view_1784744409278.jpg';
 
-import imgAuthor from '../assets/images/author_profile_new.jpg';
+const AUTHOR_IMG_URL = 'https://i.postimg.cc/fbZVRCFC/DSC03558-2.jpg';
 
 const P = ({ children }: { children: React.ReactNode }) => (
   <p className="mb-8 text-lg leading-relaxed text-justify text-[#E0E0E0]/80 print:text-black font-body">{children}</p>
@@ -39,13 +39,13 @@ const AuthorProfile = () => (
       className="relative bg-[#0A0A0A] print:bg-gray-100 border border-[#E0E0E0]/10 print:border-black/10 flex flex-col items-center justify-end overflow-hidden shadow-2xl print:shadow-none w-full max-w-[700px]"
     >
       <div className="absolute inset-0 z-0 print:hidden">
-        <img src={imgAuthor} alt="Background" className="w-full h-full object-cover opacity-20 grayscale" />
+        <img src={AUTHOR_IMG_URL} alt="Background" className="w-full h-full object-cover opacity-20 grayscale" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/50 to-transparent"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-16 pt-16 md:pt-32 pb-8 md:pb-16 w-full">
         <div className="w-64 md:w-96 rounded-sm border-4 md:border-8 border-[#C5A059]/30 p-1 md:p-2 mb-6 md:mb-10 shadow-2xl print:shadow-none bg-[#0A0A0A] print:bg-white">
-           <img src={imgAuthor} alt="Dra. Tatiani Gurgel" className="w-full h-auto object-contain rounded-sm transition-all duration-1000 block" />
+           <img src={AUTHOR_IMG_URL} alt="Dra. Tatiani Gurgel" className="w-full h-auto object-contain rounded-sm transition-all duration-1000 block" />
         </div>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#E0E0E0] print:text-black uppercase tracking-[0.1em] leading-none mb-4 md:mb-6">
           Tatiani Gurgel

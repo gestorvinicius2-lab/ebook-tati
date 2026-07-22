@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { chapters, bookTitle } from './data/book';
-import imgAuthor from './assets/images/author_profile_new.jpg';
 
 export default function App() {
   const [currentChapter, setCurrentChapter] = useState(0);
