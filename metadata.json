@@ -1,0 +1,6 @@
+{
+  "name": "Corretor Indispensável E-book",
+  "description": "Um e-book interativo com foco na evolução e profissionalização do corretor de imóveis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
