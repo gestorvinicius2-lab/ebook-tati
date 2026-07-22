@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { chapters, bookTitle } from './data/book';
+import imgAuthor from './assets/images/author_profile_new.jpg';
 
 export default function App() {
   const [currentChapter, setCurrentChapter] = useState(0);
@@ -138,8 +139,10 @@ export default function App() {
       {/* Main Reader Area */}
       <main 
         id="reader-scroll-container"
-        className="flex-1 overflow-y-auto relative bg-[#0A0A0A] pt-16 lg:pt-0 flex lg:pr-24"
+        className="flex-1 overflow-y-auto relative bg-[#0A0A0A] pt-16 lg:pt-0 flex flex-col lg:pr-24"
       >
+
+
         <div className="max-w-3xl w-full mx-auto px-8 lg:px-16 py-12 lg:py-24 min-h-full flex flex-col relative">
           
           <AnimatePresence mode="wait">

@@ -6,6 +6,8 @@ import imgProfessional from '../assets/images/real_estate_professional_178474437
 import imgContract from '../assets/images/signing_contract_1784744393533.jpg';
 import imgPenthouse from '../assets/images/luxury_penthouse_view_1784744409278.jpg';
 
+import imgAuthor from '../assets/images/author_profile_new.jpg';
+
 const P = ({ children }: { children: React.ReactNode }) => (
   <p className="mb-8 text-lg leading-relaxed text-justify text-[#E0E0E0]/80 font-body">{children}</p>
 );
@@ -29,6 +31,37 @@ const BQ = ({ children }: { children: React.ReactNode }) => (
   <blockquote className="my-12 p-8 bg-[#C5A059]/10 border-l-2 border-[#C5A059] italic text-lg font-body text-[#E0E0E0]">
     {children}
   </blockquote>
+);
+
+const AuthorProfile = () => (
+  <div className="w-full flex justify-center bg-[#050505] p-4 md:p-8 mb-16 md:mb-24 rounded-sm border border-[#E0E0E0]/10 shadow-2xl">
+    <div 
+      className="relative bg-[#0A0A0A] border border-[#E0E0E0]/10 flex flex-col items-center justify-end overflow-hidden shadow-2xl w-full max-w-[700px]"
+    >
+      <div className="absolute inset-0 z-0">
+        <img src={imgAuthor} alt="Background" className="w-full h-full object-cover opacity-20 grayscale" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/50 to-transparent"></div>
+      </div>
+      <div className="relative z-10 flex flex-col items-center text-center px-6 md:px-16 pt-16 md:pt-32 pb-8 md:pb-16 w-full">
+        <div className="w-64 md:w-96 rounded-sm border-4 md:border-8 border-[#C5A059]/30 p-1 md:p-2 mb-6 md:mb-10 shadow-2xl bg-[#0A0A0A]">
+           <img src={imgAuthor} alt="Dra. Tatiani Gurgel" className="w-full h-auto object-contain rounded-sm transition-all duration-1000 block" />
+        </div>
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#E0E0E0] uppercase tracking-[0.1em] leading-none mb-4 md:mb-6">
+          Tatiani Gurgel
+        </h1>
+        <div className="text-[10px] md:text-sm lg:text-lg font-bold text-[#C5A059] uppercase tracking-[0.2em] mb-6 md:mb-10">
+          Produtora do E-book
+        </div>
+        <div className="w-12 md:w-20 h-1 bg-[#C5A059] mb-6 md:mb-10"></div>
+        <div className="text-sm md:text-base lg:text-lg font-body text-[#E0E0E0]/90 leading-relaxed text-left space-y-4">
+          <p>Dra. Tatiani Gurgel é advogada especialista em Direito Imobiliário e gestão de negócios, corretora de imóveis, CEO da Casa Up Negócios Imobiliários e consultora estratégica para investidores no Brasil e no mercado internacional.</p>
+          <p>Ao longo de sua trajetória, percebeu que o sucesso no mercado imobiliário vai muito além de vender imóveis: exige conhecimento, método, estratégia, segurança jurídica e posicionamento profissional.</p>
+          <p>Este e-book nasceu do desejo de compartilhar experiências e ferramentas práticas que contribuam para a profissionalização do corretor de imóveis, fortalecendo sua atuação, gerando mais credibilidade e elevando o padrão de excelência do mercado. Acredito que conhecimento compartilhado transforma carreiras, gera melhores resultados e beneficia todo o setor imobiliário.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 );
 
 const CompareGrid = ({ headers, rows }: { headers: string[], rows: string[][] }) => (
@@ -56,6 +89,14 @@ const CompareGrid = ({ headers, rows }: { headers: string[], rows: string[][] })
 export const bookTitle = "DE CORRETOR INVISÍVEL PARA CORRETOR INDISPENSÁVEL";
 
 export const chapters = [
+  {
+    title: "Produtora do E-book",
+    content: (
+      <>
+        <AuthorProfile />
+      </>
+    )
+  },
   {
     title: "Prefácio",
     content: (
