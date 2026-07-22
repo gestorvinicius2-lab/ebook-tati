@@ -23,3 +23,31 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(197, 160, 89, 0.6);
 }
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  .print\:block {
+    display: block !important;
+  }
+  
+  /* Reset some styles for printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+  
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+}

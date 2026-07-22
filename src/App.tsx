@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { chapters, bookTitle } from './data/book';
 import imgAuthor from './assets/images/author_profile_new.jpg';
@@ -46,19 +46,29 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#0A0A0A] overflow-hidden text-[#E0E0E0] font-sans select-none">
-      
-      {/* Mobile Header */}
+    <>
+      <div className="flex h-screen w-full bg-[#0A0A0A] overflow-hidden text-[#E0E0E0] font-sans select-none print:hidden">
+        
+        {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-[#0A0A0A] border-b border-[#E0E0E0]/10 flex items-center justify-between px-6 z-40">
         <div className="text-[10px] tracking-[0.3em] uppercase font-bold truncate max-w-[200px]">
           {bookTitle}
         </div>
-        <button 
-          onClick={() => setIsSidebarOpen(true)}
-          className="text-[#E0E0E0] transition-colors"
-        >
-          <Menu className="w-5 h-5" />
-        </button>
+        <div className="flex items-center gap-4">
+          <button 
+            onClick={() => window.print()}
+            className="text-[#C5A059] hover:bg-[#C5A059]/10 p-2 rounded-sm transition-colors"
+            title="Baixar E-book (PDF)"
+          >
+            <Download className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={() => setIsSidebarOpen(true)}
+            className="text-[#E0E0E0] transition-colors p-2"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+        </div>
       </div>
 
       {/* Sidebar Overlay (Mobile) */}
@@ -128,9 +138,17 @@ export default function App() {
               </nav>
             </div>
             
-            <div className="p-8 lg:p-12 border-t border-[#E0E0E0]/10 flex items-center justify-between text-[10px] uppercase tracking-[0.2em] opacity-60">
-               <div>Vol. 01</div>
-               <div>{((currentChapter + 1) / chapters.length * 100).toFixed(0)}%</div>
+            <div className="p-8 lg:p-12 border-t border-[#E0E0E0]/10 flex flex-col gap-6">
+               <button 
+                 onClick={() => window.print()} 
+                 className="flex items-center justify-center gap-2 w-full py-3 border border-[#C5A059]/30 hover:bg-[#C5A059]/10 text-[#C5A059] transition-colors rounded-sm uppercase tracking-widest text-[10px] font-bold"
+               >
+                 <Download className="w-4 h-4" /> Baixar E-book (PDF)
+               </button>
+               <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] opacity-60">
+                 <div>Vol. 01</div>
+                 <div>{((currentChapter + 1) / chapters.length * 100).toFixed(0)}%</div>
+               </div>
             </div>
           </motion.aside>
         )}
@@ -215,7 +233,40 @@ export default function App() {
         <div className="w-px h-24 bg-[#E0E0E0]/20"></div>
       </div>
 
-    </div>
+      </div>
+
+      {/* Print View */}
+      <div className="hidden print:block w-full max-w-4xl mx-auto py-12 px-8 font-sans text-black bg-white">
+        <div className="mb-24 mt-24 text-center page-break-after">
+          <div className="text-sm uppercase tracking-[0.3em] font-bold mb-8 text-gray-500">
+            E-book
+          </div>
+          <h1 className="font-serif text-6xl leading-tight text-black max-w-2xl mx-auto">
+            {bookTitle}
+          </h1>
+        </div>
+        
+        {chapters.map((chapter, idx) => (
+          <div key={idx} className="page-break-after py-12">
+            <div className="mb-12">
+              <div className="text-[12px] uppercase tracking-widest font-bold text-gray-500 mb-4 flex items-center gap-4">
+                <span className="font-serif italic text-black text-lg">
+                  {(idx + 1).toString().padStart(2, '0')}
+                </span>
+                {idx === 0 ? "Introduction" : "Chapter"}
+              </div>
+              <h2 className="font-serif text-4xl leading-[1.1] text-black">
+                {getCleanTitle(chapter.title)}
+              </h2>
+            </div>
+            
+            <div className="prose-editorial max-w-none text-black">
+              {chapter.content}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
